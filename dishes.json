@@ -1,0 +1,114 @@
+[
+    {
+        "name": "Crab Rangoon",
+        "content": "A crispy wonton filled with cream cheese, crab, and green onions.",
+        "reviews": [
+        {
+            "review": "Delicious and addictive!",
+            "reviewer": "Gordon Ramsay"
+        },
+        {
+            "review": "A must-try for seafood lovers!",
+            "reviewer": "Anthony Bourdain"
+        }
+        ]
+    },
+    {
+        "name": "Fish and chips",
+        "content": "A classic dish of fried fish and french fries.",
+        "reviews": [
+        {
+            "review": "The perfect comfort food!",
+            "reviewer": "Jamie Oliver"
+        },
+        {
+            "review": "A must-try for any food lover!",
+            "reviewer": "Martha Stewart"
+        }
+        ]
+    },
+    {
+        "name": "Sushi",
+        "content": "A Japanese dish of vinegared rice topped with seafood, vegetables, or eggs.",
+        "reviews": [
+        {
+            "review": "A taste of Japan!",
+            "reviewer": "Masaharu Morimoto"
+        },
+        {
+            "review": "A culinary masterpiece!",
+            "reviewer": "David Chang"
+        }
+        ]
+    },
+    {
+        "name": "Lobster roll",
+        "content": "A New England sandwich made with lobster meat, mayonnaise, and celery on a hot dog bun.",
+        "reviews": [
+        {
+            "review": "The best lobster roll I've ever had!",
+            "reviewer": "Andrew Zimmern"
+        },
+        {
+            "review": "A must-try for any seafood lover!",
+            "reviewer": "Ina Garten"
+        }
+        ]
+    },
+    {
+        "name": "Fish tacos",
+        "content": "A Mexican dish of fried fish, cabbage, pico de gallo, and avocado in a corn tortilla.",
+        "reviews": [
+        {
+            "review": "A delicious and refreshing dish!",
+            "reviewer": "Rachael Ray"
+        },
+        {
+            "review": "A perfect summer meal!",
+            "reviewer": "Guy Fieri"
+        }
+        ]
+    },
+    {
+        "name": "Paella",
+        "content": "A Spanish rice dish cooked with seafood, chicken, sausage, and vegetables.",
+        "reviews": [
+        {
+            "review": "A hearty and flavorful dish!",
+            "reviewer": "José Andrés"
+        },
+        {
+            "review": "A must-try for any foodie!",
+            "reviewer": "Julia Child"
+        }
+        ]
+    },
+    {
+        "name": "Tuna melt",
+        "content": "A grilled sandwich made with tuna salad, cheese, and bread.",
+        "reviews": [
+        {
+            "review": "A classic comfort food!",
+            "reviewer": "Melissa Clark"
+        },
+        {
+            "review": "A delicious and easy-to-make dish!",
+            "reviewer": "Gaby Dalkin"
+        }
+        ]
+    },
+    {
+        "name": "Fish curry",
+        "content": "A South Asian dish of fish cooked in a curry sauce.",
+        "reviews": [
+        {
+            "review": "A flavorful and aromatic dish!",
+            "reviewer": "Sanjay Thuraisingham"
+        },
+        {
+            "review": "A must-try for any curry lover!",
+            "reviewer": "Vir Sanghvi"
+        }
+        ]
+    }
+]
