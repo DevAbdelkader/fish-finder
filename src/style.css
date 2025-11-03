@@ -118,9 +118,9 @@ body {
 /* Modern custom scrollbar (WebKit + Firefox) */
 /* Applies globally; you can add the `custom-scroll` class to scope this to specific containers */
 :root {
-    --scrollbar-thumb-start: #5cc7e6;
-    --scrollbar-thumb-end: #2b9fb8;
-    --scrollbar-track: rgba(255,255,255,0.02);
+    --scrollbar-thumb-start: #1e5a6b;
+    --scrollbar-thumb-end: #0e5c6e;
+    --scrollbar-track: rgba(255, 255, 255, 0);
     --scrollbar-border: rgba(0,0,0,0.18);
 }
 
