@@ -1,13 +1,353 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>fish-finder-v2</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+
+<head>
+	<meta charset="UTF-8" />
+	<link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+	<link rel="icon" type="image/png" sizes="102x192" href="/android-chrome-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="shortcut icon" href="/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Fish Finder</title>
+	<style>
+		#species {
+			margin: 0;
+			font-family: system-ui, Segoe UI, Roboto, -apple-system, Helvetica, Arial;
+			color: #e6f7fb;
+			position: relative;
+			background-image: url('/images/underwater2.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+		}
+
+		#species::before {
+			content: '';
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			left: 0;
+			top: 0;
+			background-color: rgba(0, 0, 0, 0.2);
+			backdrop-filter: blur(30px);
+			animation: blur-pulse ease-in-out 10s infinite;
+		}
+
+		@keyframes blur-pulse {
+			0% {
+				background-color: rgba(41, 148, 181, 0.4);
+				backdrop-filter: blur(15px);
+			}
+
+			30% {
+				background-color: #0002;
+				backdrop-filter: blur(20px);
+			}
+
+			60% {
+				background-color: #0004;
+				backdrop-filter: blur(40px);
+			}
+
+			100% {
+				background-color: rgba(41, 148, 181, 0.4);
+				backdrop-filter: blur(15px);
+			}
+		}
+
+		/* Hero background video styles */
+		#hero {
+			position: relative;
+			overflow: hidden;
+		}
+
+		#hero video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="app" class="font-lexend">
+		<div id="hero">
+			<video id="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+				<source src="/videos/underwater.mp4" type="video/mp4" />
+				Your browser does not support the video tag.
+			</video>
+			<div class="max-w-6xl mx-auto py-6 z-10 relative">
+				<nav class="flex justify-between items-center p-2 max-sm:flex-col gap-6">
+					<div class="flex gap-3">
+						<img src="/logo.svg" alt="logo" class="w-12 h-12" />
+						<div class="flex flex-col">
+							<h1 class="uppercase font-bebas-neue text-3xl text-[#94d1e0]/70">Fish Finder</h1>
+							<p class="text-xs text-gray-400 font-nunito font-extralight -mt-1">Dive Deep Discover More
+							</p>
+						</div>
+					</div>
+					<ul class="flex max-sm:gap-3 gap-6 uppercase text-xs text-white/60 *:hover:text-[#94d1e0]">
+						<li><a class="scroll-to" href="#species">Species</a></li>
+						<li><a class="scroll-to" href="#mission">Mission</a></li>
+						<li><a class="scroll-to" href="#reach-us">Reach Us</a></li>
+					</ul>
+				</nav>
+				<div class="mt-18 text-center px-4">
+					<h2 id="hero-title"
+						class="font-bold sm:leading-18 text-3xl sm:text-6xl text-teal-100/60 uppercase break-normal">
+						Hidden world beneath the surface.</h2>
+					<p class="mt-8 mx-auto max-w-xl text-gray-400 text-sm font-manrope font-thin">From shimmering coral
+						cities to the silent depths of freshwater lakes, FishFinder is your guide to the vibrant.
+						Discover species, habitats, and conservation stories that connect us to the pulse of aquatic
+						life.</p>
+
+					<div class="mt-18">
+						<a href="#species"
+							class="scroll-to outline-2 outline-amber-50 text-white focus:outline-none shadow-lg shadow-cyan-500/50 dark:shadow-cyan-800/80 font-medium text-sm px-5 py-2.5 text-center me-2 mb-2 opacity-55 hover:opacity-100 cursor-pointer duration-500 uppercase">Check
+							Species</a>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+		<div class="m-6 my-60">
+			<div id="species" class="rounded-2xl [&::before]:rounded-2xl">
+				<div class="rounded-2xl flex flex-col items-center py-32 px-5 gap-14 bg-gradient-to-r from-[#dfe2fe] via-[#b1cbfa] to-[#8e98f5]"
+					id="fish-selector">
+					<h2 class="z-20 text-6xl font-bold text-black/80 capitalize text-center">
+						Choose a creature to discover.</h2>
+					<div class="select-box z-30 max-md:w-full relative" aria-expanded="false">
+						<button type="button" aria-haspopup="listbox" aria-expanded="false"
+							class="w-full md:w-92 gap-4 relative font-nunito font-extralight text-white bg-black/40 text-start px-5 py-3 rounded-lg flex justify-between text-sm items-center cursor-pointer">
+							<span id="select-label">Select</span>
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+								stroke="currentColor" class="size-4">
+								<path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+							</svg>
+						</button>
+						<div class="select-menu" id="select-menu" hidden>
+							<!-- tabs are generated from data/categories -->
+							<ul class="select-tabs" id="tabs" role="tablist"></ul>
+
+							<!-- fish list populated from /data/fish.json -->
+							<ul id="fish-list"
+								class="@container max-h-96 overflow-auto grid grid-cols-12 gap-2 sm:gap-8 font-nunito text-white/60 *:hover:text-white p-2 sm:p-6"
+								role="listbox" tabindex="0">
+								<!-- populated dynamically -->
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div id="creature-view"
+					class="grid grid-cols-1 lg:grid-cols-[280px_1fr_230px] gap-10 py-12 lg:px-12 relative max-w-6xl mx-auto overflow-hidden"
+					hidden>
+
+					<div class="flex flex-col gap-3 z-20 max-lg:px-6">
+						<button id="back-to-select"
+							class="absolute top-10 left-10 w-20 p-2 font-semibold uppercase text-xl cursor-pointer stroke-[#75ABBE] fill-[#75ABBE] text-[#75ABBE] flex gap-2 items-center hover:text-white hover:fill-white hover:stroke-white duration-200">
+							<svg class="shrink-0" width="27" height="27" viewBox="0 0 27 27"
+								xmlns="http://www.w3.org/2000/svg">
+								<path d="M7.75659 13.2973H23.2701" stroke-width="2.21622" stroke-linecap="round"
+									stroke-linejoin="round" />
+								<path
+									d="M2.53166 13.0719L8.57108 8.75802C9.15781 8.33892 9.97282 8.75834 9.97282 9.47939V17.1152C9.97282 17.8363 9.15781 18.2557 8.57108 17.8366L2.53166 13.5227C2.37698 13.4123 2.37698 13.1824 2.53166 13.0719Z" />
+							</svg>
+							Back
+						</button>
+						<div id="creature-stats" class="lg:mt-16 grid grid-cols-2 gap-1 text-center text-md"></div>
+						<p id="creature-desc"
+							class="text-justify z-20 font-space-grotesk font-light p-6 rounded-xl bg-white/10">
+						</p>
+					</div>
+
+					<div class="flex flex-col max-lg:row-start-1 max-lg:mt-16 overflow-hidden">
+						<div class="z-20 max-lg:px-6">
+							<div class="flex gap-4 items-center flex-wrap-reverse">
+								<h2 id="creature-name"
+									class="text-4xl uppercase font-space-grotesk font-extrabold text-[#1a3d3c]">
+								</h2>
+								<span id="creature-badge"
+									class="py-1.5 px-2 rounded-lg text-sm h-fit bg-black/20"></span>
+							</div>
+						</div>
+						<div id="version-2-model" class="h-[350px] z-10 w-full scale-125"></div>
+					</div>
+
+					<div class="text-sm lg:pt-16 z-20 max-lg:px-6">
+						<div class="p-5 bg-black/10 rounded-t-2xl rounded-b-lg">
+							<div class="font-extralight uppercase text-center">Behavior</div>
+							<p id="creature-behavior" class="mt-3 font-manrope text-justify"></p>
+						</div>
+						<div class="p-5 bg-black/10 rounded-lg mt-1">
+							<div class="font-extralight uppercase text-center">Taxonomy</div>
+							<ul id="creature-taxonomy" class="grid grid-cols-2 gap-2 mt-3 color-[#cfeff6] font-manrope">
+							</ul>
+						</div>
+						<div class="mt-1 p-5 text-sm bg-[#5186A8]/20 rounded-2xl rounded-t-lg">
+							<div class="font-extralight uppercase text-center">Did you know?</div>
+							<p id="creature-quick-info" class="mt-3 text-justify font-manrope"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mission Section -->
+		<section id="mission" class="max-w-6xl my-60 mx-auto py-16 px-6" aria-labelledby="mission-title">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+				<div>
+					<h2 id="mission-title" class="text-4xl font-bebas-neue uppercase text-[#91cedd]">Our Mission</h2>
+					<p class="mt-4 text-gray-400 font-nunito max-w-xl">At FishFinder we bring people closer to the
+						oceans' hidden worlds.
+						Our mission is to provide safe, immersive submarine expeditions and world-class
+						diving education that inspire conservation, scientific curiosity and a lifelong
+						respect for aquatic ecosystems. We combine experienced guides, responsible
+						practices, and hands-on learning so every trip helps protect the seas we explore.</p>
+
+					<ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-300 ">
+						<li data-speed="1.2" class="p-4 bg-white/10 hover:scale-105 duration-200 rounded-lg">
+							<strong class="block">Submarine Expeditions</strong>
+							<span class="text-xs">Explore deepwater habitats with guided, small-group voyages.</span>
+						</li>
+						<li data-speed="1.2" class="p-4 bg-white/10 hover:scale-105 duration-200 rounded-lg">
+							<strong class="block">Diving Education</strong>
+							<span class="text-xs">Learn from certified instructors — from beginners to advanced
+								specialties.</span>
+						</li>
+						<li data-speed="1.2" class="p-4 bg-white/10 hover:scale-105 duration-200 rounded-lg">
+							<strong class="block">Research & Conservation</strong>
+							<span class="text-xs">Partnering with scientists, we support monitoring and
+								habitat protection.</span>
+						</li>
+						<li data-speed="1.2" class="p-4 bg-white/10 hover:scale-105 duration-200 rounded-lg">
+							<strong class="block">Community Outreach</strong>
+							<span class="text-xs">Education programs that connect local communities to ocean
+								stewardship.</span>
+						</li>
+					</ul>
+				</div>
+
+				<div
+					class="rounded-xl overflow-hidden bg-[url('/images/underwater2.jpg')] bg-cover bg-center h-72 shadow-lg">
+					<div class="h-full w-full bg-black/30 flex items-end p-6">
+						<div class="text-white">
+							<h3 class="text-xl font-semibold">Explore responsibly</h3>
+							<p class="text-sm">Small groups, expert guides, unforgettable views.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Reach Us Section -->
+		<section id="reach-us" class="m-10 rounded-xl bg-gradient-to-b from-[#355862] to-[#042e38] text-white py-6 px-6"
+			aria-labelledby="reachus-title">
+			<div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+				<div>
+					<h2 id="reachus-title" class="text-3xl font-bebas-neue uppercase">Reach Us</h2>
+					<p class="mt-3 text-sm text-white/80 max-w-md">Questions about trips, bookings, or education
+						programs? Get in touch — our team is happy to help plan your next underwater adventure.</p>
+
+					<div class="mt-6 space-y-3 text-sm">
+						<div><strong>Office</strong>: Oceanic House, Pier 9, Harbor City</div>
+						<div><strong>Phone</strong>: <a href="tel:+1234567890" class="underline">+1 (234)
+								567-890</a></div>
+						<div><strong>Email</strong>: <a href="mailto:info@fishfinder.example"
+								class="underline">info@fishfinder.example</a></div>
+					</div>
+
+					<div class="mt-6">
+						<h3 class="text-sm uppercase text-white/80">Office Hours</h3>
+						<p class="text-sm text-white/70">Mon — Fri: 9:00 — 18:00<br />Sat: 10:00 — 14:00</p>
+					</div>
+				</div>
+
+				<div>
+					<form id="contact-form" action="" class="grid grid-cols-1 gap-3 bg-white/6 p-6 rounded-lg"
+						aria-label="Contact form">
+						<label class="sr-only" for="cf-name">Name</label>
+						<input id="cf-name" name="name" type="text" placeholder="Your name"
+							class="p-3 rounded bg-white/10 text-white" />
+
+						<label class="sr-only" for="cf-email">Email</label>
+						<input id="cf-email" name="email" type="email" placeholder="Email"
+							class="p-3 rounded bg-white/10 text-white" />
+
+						<label class="sr-only" for="cf-message">Message</label>
+						<textarea id="cf-message" name="message" rows="4" placeholder="How can we help?"
+							class="p-3 rounded bg-white/10 text-white"></textarea>
+
+						<div class="flex gap-3">
+							<button type="button"
+								class="bg-cyan-400 text-black px-4 py-2 rounded cursor-pointer opacity-40 hover:opacity-100 duration-200">Send</button>
+							<button type="reset" class="border border-white/20 px-4 py-2 rounded">Reset</button>
+						</div>
+					</form>
+
+					<div class="mt-4 h-40 rounded-lg overflow-hidden">
+						<!-- Embedded Google Map (development embed, no API key required) -->
+						<iframe title="Fish Finder office location" class="w-full h-40" loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"
+							src="https://www.google.com/maps?q=Oceanic%20House%20Pier%209%20Harbor%20City&output=embed"></iframe>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<footer class="text-white/90 py-6 bg-gray-900">
+			<div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+				<div class="flex items-center gap-3">
+					<img src="/logo.svg" alt="Fish Finder logo" class="w-10 h-10" />
+					<div>
+						<div class="font-bebas-neue uppercase text-lg text-white">Fish Finder</div>
+						<div class="text-sm text-white/70">Submarine trips & diving education</div>
+					</div>
+				</div>
+
+				<div class="flex items-center gap-4">
+					<a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter"
+						class="text-white/80 hover:text-white">
+						<!-- simple inline svg for icon -->
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+							<path
+								d="M22 5.92c-.64.28-1.32.48-2.04.56.73-.44 1.28-1.14 1.54-1.98-.68.4-1.44.68-2.24.84C18.6 4.36 17.62 4 16.56 4c-1.6 0-2.9 1.3-2.9 2.9 0 .22.02.44.06.64C10.35 7.4 7.2 5.74 5.14 3.02c-.24.42-.38.9-.38 1.42 0 .98.5 1.84 1.26 2.34-.6-.02-1.16-.18-1.66-.46v.04c0 1.36.96 2.5 2.24 2.76-.24.06-.5.1-.76.1-.18 0-.36-.02-.54-.06.36 1.12 1.38 1.94 2.6 1.96C7.1 14 6 14.36 4.82 14.36c-.3 0-.6-.02-.88-.06 1 0 1.86.34 2.66.92 1.56 1.08 3.46 1.72 5.48 1.72 6.58 0 10.18-5.44 10.18-10.16v-.46c.7-.5 1.3-1.12 1.78-1.82-.64.28-1.32.48-2.04.56z" />
+						</svg>
+					</a>
+					<a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"
+						class="text-white/80 hover:text-white">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+							<path
+								d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.75A4.25 4.25 0 1 0 16.25 13 4.25 4.25 0 0 0 12 8.75zM18.5 6.25a1.25 1.25 0 1 0 1.25 1.25A1.25 1.25 0 0 0 18.5 6.25z" />
+						</svg>
+					</a>
+					<a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"
+						class="text-white/80 hover:text-white">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+							<path
+								d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.12 8.44 9.88v-6.99H7.9v-2.9h2.54V9.41c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.77-1.61 1.56v1.87h2.74l-.44 2.9h-2.3V21.9C18.34 21.12 22 17 22 12z" />
+						</svg>
+					</a>
+				</div>
+			</div>
+
+			<div class="max-w-6xl mx-auto px-6 mt-4 text-center text-xs text-white/60">
+				<p>© <span id="year">2025</span> Fish Finder — This is a demo site for a fictitious company. Not a real
+					commercial operator.</p>
+			</div>
+		</footer>
+	</div>
+
+	<script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>

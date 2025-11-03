@@ -1,0 +1,137 @@
+[
+  {
+    "id": 2,
+    "name": "Dolphin",
+    "img": "/images/fish/dolphin.png",
+    "model": "models/dolphin.glb",
+    "category": "Cetacea",
+    "badge": "Least Concern",
+    "description": "A highly social, intelligent marine mammal known for its agility and playfulness.",
+    "taxonomy": {
+      "kingdom": "Animalia",
+      "phylum": "Chordata",
+      "class": "Mammalia",
+      "order": "Cetacea",
+      "family": "Delphinidae"
+    },
+    "stats": {
+      "maxLength": "4 m",
+      "maxWeight": "650 kg",
+      "habitat": "Coastal and offshore waters",
+      "diet": "Fish and squid",
+      "speed": "20-60 km/h",
+      "lifeSpan": "20-50 years",
+      "depthRange": "0-200 m"
+    },
+    "behaviour": "Very social; forms pods and uses complex vocal communication and hunting strategies.",
+    "quickInfo": "Dolphins have unique signature whistles they use like names to identify each other."
+  },
+  {
+    "id": 3,
+    "name": "Hammerhead Shark",
+    "img": "/images/fish/hammerhead.png",
+    "model": "models/hummerhead-shark.glb",
+    "category": "Carcharhiniformes",
+    "badge": "Vulnerable",
+    "description": "Distinctive T-shaped head; often found in warm coastal waters and known for schooling behavior in some species.",
+    "taxonomy": {
+      "kingdom": "Animalia",
+      "phylum": "Chordata",
+      "class": "Chondrichthyes",
+      "order": "Carcharhiniformes",
+      "family": "Sphyrnidae"
+    },
+    "stats": {
+      "maxLength": "6 m",
+      "maxWeight": "500 kg",
+      "habitat": "Coastal and continental shelves",
+      "diet": "Fish, cephalopods, crustaceans",
+      "speed": "moderate",
+      "lifeSpan": "20-30 years",
+      "depthRange": "0-200 m"
+    },
+    "behaviour": "Often migratory; some species form large schools by day.",
+    "quickInfo": "Hammerheads' wide heads improve sensory perception — helping them detect prey buried in sand."
+  },
+  {
+    "id": 4,
+    "name": "White Shark",
+    "img": "/images/fish/shark.png",
+    "model": "models/shark-animated.glb",
+    "category": "Lamniformes",
+    "badge": "Vulnerable",
+    "description": "A shark variant model included for visualization and testing.",
+    "taxonomy": {
+      "kingdom": "Animalia",
+      "phylum": "Chordata",
+      "class": "Chondrichthyes",
+      "order": "Lamniformes",
+      "family": "Lamnidae"
+    },
+    "stats": {
+      "maxLength": 6,
+      "maxWeight": "1100 kg",
+      "habitat": "Coastal",
+      "diet": "Seals, fish",
+      "speed": 56,
+      "lifeSpan": 50,
+      "depthRange": "0-1200 m"
+    },
+    "behaviour": "No data — placeholder entry for model preview.",
+    "quickInfo": "Sharks have existed for over 400 million years — long before dinosaurs."
+  },
+  {
+    "id": 6,
+    "name": "Atlantic Bluefin Tuna",
+    "img": "/images/fish/tuna.png",
+    "model": "models/tuna.glb",
+    "category": "Scombriformes",
+    "badge": "Varies",
+    "description": "Fast-swimming pelagic fish prized by commercial and sport fisheries.",
+    "taxonomy": {
+      "kingdom": "Animalia",
+      "phylum": "Chordata",
+      "class": "Actinopterygii",
+      "order": "Scombriformes",
+      "family": "Scombridae"
+    },
+    "stats": {
+      "maxLength": 2.5,
+      "maxWeight": "250 kg",
+      "habitat": "Pelagic",
+      "diet": "Fish & squid",
+      "speed": 70,
+      "lifeSpan": 25,
+      "depthRange": "0-500 m"
+    },
+    "behaviour": "Highly migratory and forms schools; powerful sustained swimmers.",
+    "quickInfo": "Some tuna species can keep parts of their bodies warmer than the surrounding water to swim faster."
+  },
+  {
+    "id": 7,
+    "name": "Blue Whale",
+    "img": "/images/fish/whale.png",
+    "model": "models/whale.glb",
+    "category": "Cetacea",
+    "badge": "Endangered",
+    "description": "Large marine mammal model used for scale and visualization in the viewer.",
+    "taxonomy": {
+      "kingdom": "Animalia",
+      "phylum": "Chordata",
+      "class": "Mammalia",
+      "order": "Cetacea",
+      "family": "Balaenopteridae"
+    },
+    "stats": {
+      "maxLength": 30,
+      "maxWeight": "varies",
+      "habitat": "Pelagic",
+      "diet": "Krill",
+      "speed": 50,
+      "lifeSpan": 80,
+      "depthRange": "0-500 m"
+    },
+    "behaviour": "Large, often social mammals with complex behaviors; used here as a model asset.",
+    "quickInfo": "Some whales produce low-frequency songs that can travel across entire ocean basins."
+  }
+]
