@@ -2,7 +2,7 @@
   {
     "id": 2,
     "name": "Dolphin",
-    "img": "/images/fish/dolphin.png",
+    "img": "./images/fish/dolphin.png",
     "model": "models/dolphin.glb",
     "category": "Cetacea",
     "badge": "Least Concern",
@@ -29,7 +29,7 @@
   {
     "id": 3,
     "name": "Hammerhead Shark",
-    "img": "/images/fish/hammerhead.png",
+    "img": "./images/fish/hammerhead.png",
     "model": "models/hummerhead-shark.glb",
     "category": "Carcharhiniformes",
     "badge": "Vulnerable",
@@ -56,7 +56,7 @@
   {
     "id": 4,
     "name": "White Shark",
-    "img": "/images/fish/shark.png",
+    "img": "./images/fish/shark.png",
     "model": "models/shark-animated.glb",
     "category": "Lamniformes",
     "badge": "Vulnerable",
@@ -83,7 +83,7 @@
   {
     "id": 6,
     "name": "Atlantic Bluefin Tuna",
-    "img": "/images/fish/tuna.png",
+    "img": "./images/fish/tuna.png",
     "model": "models/tuna.glb",
     "category": "Scombriformes",
     "badge": "Varies",
@@ -110,7 +110,7 @@
   {
     "id": 7,
     "name": "Blue Whale",
-    "img": "/images/fish/whale.png",
+    "img": "./images/fish/whale.png",
     "model": "models/whale.glb",
     "category": "Cetacea",
     "badge": "Endangered",
