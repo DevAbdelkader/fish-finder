@@ -365,7 +365,7 @@
 			 const heroVideo = document.getElementById('hero-video');
 			 if (heroVideo && loadingOverlay) {
 				 // Hide overlay when video is loaded
-				 heroVideo.addEventListener('loadeddata', () => {
+				 heroVideo.addEventListener('playing', () => {
 					 loadingOverlay.classList.add('opacity-0');
 					 setTimeout(() => loadingOverlay.style.display = 'none', 500);
 				 });
