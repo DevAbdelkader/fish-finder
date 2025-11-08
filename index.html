@@ -74,22 +74,12 @@
 			z-index: 0;
 		}
 	</style>
-  <script type="module" crossorigin src="/fish-finder/assets/index-CN31JWtY.js"></script>
-  <link rel="stylesheet" crossorigin href="/fish-finder/assets/index-DmUMrbq4.css">
+  <script type="module" crossorigin src="/fish-finder/assets/index-DO_S3eCB.js"></script>
+  <link rel="stylesheet" crossorigin href="/fish-finder/assets/index-xRPOWkKs.css">
 </head>
 
 <body>
-	 <!-- Loading Overlay -->
-	 <div id="loading-overlay" class="fixed inset-0 z-[9999] flex items-center justify-center bg-[#042e38] bg-opacity-90 transition-opacity duration-500">
-		 <div class="flex flex-col items-center gap-4">
-			 <svg class="animate-spin h-12 w-12 text-cyan-300" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-				 <circle class="opacity-20" cx="25" cy="25" r="20" stroke="currentColor" stroke-width="6" />
-				 <path d="M45 25c0-11.046-8.954-20-20-20" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
-			 </svg>
-			 <span class="text-cyan-100 text-lg font-semibold font-manrope">Loading underwater world...</span>
-		 </div>
-	 </div>
-	 <div id="app" class="font-lexend">
+	<div id="app" class="font-lexend">
 		<div id="hero">
 			<video id="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
 				<source src="/fish-finder/videos/underwater.mp4" type="video/mp4" />
@@ -359,23 +349,6 @@
 		</footer>
 	</div>
 
-		 <script>
-			 // Loading overlay logic
-			 const loadingOverlay = document.getElementById('loading-overlay');
-			 const heroVideo = document.getElementById('hero-video');
-			 if (heroVideo && loadingOverlay) {
-				 // Hide overlay when video is loaded
-				 heroVideo.addEventListener('playing', () => {
-					 loadingOverlay.classList.add('opacity-0');
-					 setTimeout(() => loadingOverlay.style.display = 'none', 500);
-				 });
-				 // Fallback: hide after 3s if video fails
-				 setTimeout(() => {
-					 loadingOverlay.classList.add('opacity-0');
-					 setTimeout(() => loadingOverlay.style.display = 'none', 500);
-				 }, 3000);
-			 }
-		 </script>
 </body>
 
 </html>
